@@ -1,5 +1,12 @@
 package main;
 
+import main.pieces.Bishop;
+import main.pieces.King;
+import main.pieces.Knight;
+import main.pieces.Pawn;
+import main.pieces.Queen;
+import main.pieces.Rook;
+
 public class Main {
 
     public static void main(String[] args) {

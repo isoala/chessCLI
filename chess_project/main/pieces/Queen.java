@@ -1,4 +1,6 @@
-package main;
+package main.pieces;
+
+import main.Piece;
 
 public class Queen extends Piece {
     public Queen(String color, int row, int col) {

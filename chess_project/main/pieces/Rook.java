@@ -1,4 +1,6 @@
-package main;
+package main.pieces;
+
+import main.Piece;
 
 public class Rook extends Piece {
     public Rook(String color, int row, int col) {
