@@ -12,7 +12,7 @@ public class Square {
         this.col = col;
         this.piece = piece;
     }
-
+    //returns the row, col, pieces.
     public int getRow() { return row; }
     public int getCol() { return col; }
     public Piece getPiece() { return piece; }
