@@ -2,12 +2,16 @@
 
 This project is a CLI chess game developed in Java. It allows users to play chess against a basic AI opponent directly in their terminal.
 
+## Current State of The Repository
+*  While the game is in an unfinished state, I plan on working on this regularly until all the features are working as intended.
+* Future Improvements are a second priority once the features are fully developed.
+
 ## Features
 
 * **Standard Chess Rules:** Implements standard chess movement, including pawn promotion, castling, and en passant (to be added).
 * **Move Validation:** Checks for legal moves and prevents illegal actions.
-* **Board Display:** Displays the chessboard using Unicode characters for pieces.
-* **Basic AI Opponent:** Includes a simple AI opponent (Minimax/Alpha-Beta or random move selection) for single-player games.
+* **Board Display:** Displays the chessboard with ASCII aand pieces using Unicode characters.
+* **Basic AI Opponent:** Includes a simple AI opponent for single-player games.
 * **Check and Checkmate:** Detects check and checkmate conditions.
 * **Algebraic Notation:** Accepts moves in standard algebraic notation (e.g., "b6", "0-0").
 
@@ -63,7 +67,7 @@ This project is a CLI chess game developed in Java. It allows users to play ches
 
 ### Unicode Character Issues on Windows
 
-Windows command prompt and PowerShell may have issues displaying Unicode characters correctly by default. This can result in the chess pieces appearing as boxes or other symbols.
+Windows command prompt and PowerShell may have issues displaying Unicode characters correctly by default. This can result in the chess pieces appearing as boxes or in my case question marks. I attempted all the guides and solutions I could find on the internet and I couldnt get it to work so good luck if you want to get the unicode to display properly on powershell. Below I will provide the recommended ways from google to fix unloaded unicode chess pieces.
 
 **Solutions for Windows Users:**
 
@@ -96,7 +100,7 @@ Windows command prompt and PowerShell may have issues displaying Unicode charact
 * Follow the command line prompts.
 
 ## Future Improvements
-s
+
 * Implement full AI functionality using Minimax/Alpha-Beta pruning.
 * Add support for en passant and pawn promotion.
 * Improve the user interface and error handling.
