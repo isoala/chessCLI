@@ -1,7 +1,8 @@
 package main.board;
 
-//import main.Piece; //ig i dont need this anymore
+//import main.pieces.Piece;
 import main.pieces.*;
+
 
 public class Board {
     private Square[][] squares;
@@ -26,7 +27,7 @@ public class Board {
         squares[0][5].setPiece(new Bishop("black", 0, 5));
         squares[0][1].setPiece(new Knight("black", 0, 1));
         squares[0][6].setPiece(new Knight("black", 0, 6));
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) {//black pawn
             squares[1][i].setPiece(new Pawn("black", 1, i));
         }
 
@@ -39,14 +40,14 @@ public class Board {
         squares[7][5].setPiece(new Bishop("white", 7, 5));
         squares[7][1].setPiece(new Knight("white", 7, 1));
         squares[7][6].setPiece(new Knight("white", 7, 6));
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++) { //white pawn
             squares[6][i].setPiece(new Pawn("white", 6, i));
         }
     }
     public Square getSquare(int row, int col){
         return squares[row][col];
     }
-    public Square[][] getBoardArray(){
+    public Square[][] getBoardArray(){//return the matrix and state of initialized board
         return squares;
     }
 }

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-//scrap this nonsense
+//scrap this nonsense this file is unused atm
 
 public class AsciiInverter {
 

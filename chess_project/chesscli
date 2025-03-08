@@ -1,0 +1,9 @@
+#!/bin/bash
+java -jar chessCLI.jar "$@"
+#
+#this file allows for users to type "chesscli" in the command prompt from anywhere in their file dir 
+#the game will launch from that one command
+#
+#im not entirely sure how this works yet so well see its prob gunna be more complicated than two lines.
+#
+#

@@ -1,4 +1,4 @@
-package main;
+package main.pieces;
 
 public abstract class Piece {
     protected String color;

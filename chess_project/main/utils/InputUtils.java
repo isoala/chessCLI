@@ -1,27 +1,21 @@
 package main.utils;
 
+
 import java.util.Scanner;
 
 public class InputUtils {
 
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static int getValidInput() {
-        try (Scanner scanner = new Scanner(System.in)) { // try-with-resources
-            int userInput;
-
-            while (true) {
-                System.out.print("Enter 1, 2, or 3: ");
-
-                if (scanner.hasNextInt()) {
-                    userInput = scanner.nextInt();
-                    if (userInput == 1 || userInput == 2 || userInput == 3) {
-                        return userInput; // Valid input, return the value
-                    } else {
-                        System.out.println("Invalid input. Please enter 1, 2, or 3.");
-                    }
-                } else {
-                    System.out.println("Invalid input. Please enter 1, 2, or 3.");
-                    scanner.next(); // Consume the invalid input to prevent infinite loop
-                }
+        while (true) {
+            if (scanner.hasNextInt()) {
+                int input = scanner.nextInt();
+                scanner.nextLine(); // Consume newline left-over
+                return input;
+            } else {
+                System.out.println("Invalid input. Please enter 1, 2, or 3.");
+                scanner.nextLine(); // Consume invalid input
             }
         }
     }

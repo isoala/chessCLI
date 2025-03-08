@@ -1,8 +1,7 @@
 package main.ui;
 
-import main.board.Board;
-import main.Piece;
-import main.board.Square;
+import main.board.*;
+import main.pieces.Piece;
 
 public class ConsoleUI {
 

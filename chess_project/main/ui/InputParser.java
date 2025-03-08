@@ -3,7 +3,7 @@ package main.ui;
 import main.board.Board;
 import main.board.Move;
 import main.board.Square;
-import main.Piece;
+import main.pieces.Piece;
 
 public class InputParser {
 

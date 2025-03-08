@@ -5,7 +5,7 @@ import main.utils.*;
 
 
 
-public class Main {
+public class Chess {
     
     public static void main(String[] args) {
 

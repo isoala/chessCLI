@@ -1,6 +1,6 @@
 package main.board;
 
-import main.Piece;
+import main.pieces.Piece;
 
 public class Move {
     private Square startSquare;

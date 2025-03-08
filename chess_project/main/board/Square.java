@@ -1,6 +1,7 @@
 package main.board;
 
-import main.Piece;
+import main.pieces.Piece;
+
 
 public class Square {
     private int row;
