@@ -6,7 +6,7 @@ public class Game {
     private Board board;
     private ConsoleUI ui;
 
-    public Game() {
+    public Game(Player player) {
         this.board = new Board();
         this.ui = new ConsoleUI();
     }
