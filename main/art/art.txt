@@ -1,5 +1,6 @@
 
 
+
 ╔═══════════════════════════════════════════════════════════════════════════════════╗
 ║            88                                            ,dPYb,   88     a8b88d8a ║
 ║            88                                           dadPPYba, 88        88    ║
@@ -11,6 +12,5 @@
 ║  `"Ybbd8"' 88       88  `"Ybbd8"' `"YbbdP"' `"YbbdP"'   `"YbbdP"  888888P Yb88dY  ║
 ╚═══════════════════════════════════════════════════════════════════════════════════╝
 
-                            Welcome to ChessCLI 
 
-            Choose a difficulty: easy(1), medium(2), GrandMaster(3)
+                            Welcome to ChessCLI 

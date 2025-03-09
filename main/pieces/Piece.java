@@ -1,5 +1,8 @@
 package main.pieces;
 
+import main.board.Board;
+import main.board.Move;
+
 public abstract class Piece {
     protected String color;
     protected int row;
@@ -13,25 +16,27 @@ public abstract class Piece {
         this.symbol = symbol;
     }
 
-    public abstract boolean isValidMove(int startRow, int startCol, int endRow, int endCol, String[][] board);
-
-    public String getSymbol() {
-        return symbol;
-    }
+    public abstract boolean isValidMove(Move move, Board board);
 
     public String getColor() {
         return color;
     }
-     public int getRow(){
-         return row;
-     }
-     public int getCol(){
-         return col;
-     }
-     public void setRow(int row){
-         this.row = row;
-     }
-     public void setCol(int col){
-         this.col = col;
-     }
+
+    public abstract String getSymbol();
+
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
+    }
 }
