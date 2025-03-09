@@ -4,13 +4,11 @@ import main.game.*;
 import main.utils.*;
 
 
-
 public class Chess {
     
     public static void main(String[] args) {
 
-        String filePath = "/art/art.txt";
-        TxtReader.printFile(filePath);
+        TxtReader.printFile("art.txt");
         
         
         // Get user input (1, 2, or 3)
