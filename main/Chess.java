@@ -9,7 +9,7 @@ public class Chess {
     
     public static void main(String[] args) {
 
-        String filePath = "chess_project/main/art/art.txt";
+        String filePath = "/art/art.txt";
         TxtReader.printFile(filePath);
         
         

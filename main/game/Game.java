@@ -1,6 +1,6 @@
 package main.game;
-import main.board.Board;
-import main.ui.ConsoleUI;
+import main.board.*;
+import main.ui.*;
 
 public class Game {
     private Board board;

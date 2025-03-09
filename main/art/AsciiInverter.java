@@ -34,7 +34,7 @@ public class AsciiInverter {
     }
 
     public static void main(String[] args) {//idk why i thought this would work
-        String inputFile = "chess_project/main/art/art2.txt";
+        String inputFile = "/main/art/art2.txt";
         invertAndPrintAscii(inputFile);
     }
 }

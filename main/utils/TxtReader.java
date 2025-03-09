@@ -6,9 +6,8 @@ import java.io.IOException;
 
 public class TxtReader {
 
-    public static void printFile(String filePath) { //switched to grap string from Main.java
+    public static void printFile(String filePath) { //switched to grab string from Main.java
 
-       // String filePath = "chess_project/main/utils/art.txt"; // hardcoded pathed to ascii art
 
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
