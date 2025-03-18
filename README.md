@@ -3,7 +3,7 @@
 This project is a CLI chess game developed in Java. It allows users to play chess against a basic AI opponent directly in their terminal.
 
 ## Current State of The Repository
-* While the game is in an unfinished state, I plan on working on this regularly until all the features are working as intended.
+* While the game is playable, I plan on working on this regularly until all the features are working as intended.
 * Future Improvements are a second priority once the features are fully developed.
 
 ## Features
@@ -42,6 +42,7 @@ This project is a CLI chess game developed in Java. It allows users to play ches
     chesscli
     ```
     * You can run this command from any directory after installation.
+    
 
 ### On Windows Systems
 
@@ -50,16 +51,18 @@ This project is a CLI chess game developed in Java. It allows users to play ches
 ## How to Play
 
 * The game will display the chessboard in the console.
-* You will be prompted to enter your move using algebraic notation.
+* You will be prompted for color and difficulty.
+* You will be prompted to enter your move using the current and desired location of the piece you want to me.
 * **Examples:**
     * `e2e4` (move pawn from e2 to e4)
-    * `Bf4` (move bishop to f4)
-    * `0-0` (kingside castling)
+    * `c1f4` (move bishop to f4)
+    * `0-0` (kingside castling) 
     * `0-0-0` (queenside castling)
     * `b8a6` (move knight from b8 to a6)
 * The game will validate your move and update the board.
 * The game will inform you when a player is in check or checkmate.
 * Follow the command line prompts.
+* 
 
 ## Uninstallation
 
@@ -106,7 +109,6 @@ To uninstall the game, follow these steps:
 * Improve the user interface and error handling.
 * Implement a help command for Users unsure of how to make a move
 * Implement a full PGN save/load feature.
-* Implement a undo move feature.
 * Refactor the input parsing to be more robust.
 
 ## Contributing
