@@ -1,4 +1,16 @@
 # CLI Chess Game
+```
+╔═══════════════════════════════════════════════════════════════════════════════════╗
+║            88                                            ,dPYb,   88     a8b88d8a ║
+║            88                                           daY'"'ba, 88        88    ║
+║            88                                          a8"'    "" 88        88    ║
+║  ,adPPYba, 88,dPPYba,   ,adPPYba, ,adPPYba, ,adPPYba, .a8"        88        88    ║
+║ a8"     "" 88P'    "8a a8P_____88 I8[    "" I8[    "" |a8"        88        88    ║
+║ 8b         88       88 8PP"""""""  `"Y8ba,   `"Y8ba,  '8b;     ,, 88        88    ║
+║ "8a,   ,aa 88       88 "8b,   ,aa aa    ]8I aa    ]8I  "8a,. ,,ap 88        88    ║
+║  `"Ybbd8"' 88       88  `"Ybbd8"' `"YbbdP"' `"YbbdP"'   `"YbbdP"  888888P Yb88dY  ║
+╚═══════════════════════════════════════════════════════════════════════════════════╝
+```
 
 This project is a CLI chess game developed in Java. It allows users to play chess against a basic AI opponent directly in their terminal.
 
