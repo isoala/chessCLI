@@ -29,17 +29,15 @@ public class Game {
 
     public void start() {
         ui.printBoard(gameState.getBoard());
-        while (true) {
+        while (!gameState.getBoard().isGameOver()) {
             if (gameState.getCurrentPlayerColor().equals(player.getColor())) {
                 playerTurn();
             } else {
                 aiTurn();
             }
-            if (/* check for checkmate or stalemate */ false) {
-                break;
-            }
             togglePlayer();
         }
+        System.out.println("Game Over!");
     }
 
     private void playerTurn() {
@@ -54,7 +52,7 @@ public class Game {
 
         Move move = parser.parseMove(input);
 
-        if (move != null && gameState.getBoard().isValidMove(move, player)) {
+        if (move != null && gameState.getBoard().isValidMove(move, player.getColor())) {
             gameState.getBoard().executeMove(move);
             ui.printBoard(gameState.getBoard());
         } else {

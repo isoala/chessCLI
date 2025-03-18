@@ -39,4 +39,10 @@ public abstract class Piece {
     public void setCol(int col) {
         this.col = col;
     }
+    public abstract Piece copy();
+
+    public abstract String getType();
+
+    public abstract java.util.List<Move> getPossibleMoves(Board board, int row, int col);
+
 }

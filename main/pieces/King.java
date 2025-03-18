@@ -2,6 +2,8 @@ package main.pieces;
 
 import main.board.Board;
 import main.board.Move;
+import java.util.ArrayList;
+import java.util.List;
 
 public class King extends Piece {
 
@@ -36,5 +38,37 @@ public class King extends Piece {
     @Override
     public String getSymbol() {
         return symbol;
+    }
+
+    @Override
+    public Piece copy() {
+        return new King(this.getColor(), this.getRow(), this.getCol());
+    }
+
+    @Override
+    public List<Move> getPossibleMoves(Board board, int row, int col) {
+        List<Move> moves = new ArrayList<>();
+        int[][] possibleMoves = {
+                {-1, -1}, {-1, 0}, {-1, 1},
+                {0, -1}, {0, 1},
+                {1, -1}, {1, 0}, {1, 1}
+        };
+
+        for (int[] move : possibleMoves) {
+            int newRow = row + move[0];
+            int newCol = col + move[1];
+
+            if (newRow >= 0 && newRow < 8 && newCol >= 0 && newCol < 8) {
+                Piece destinationPiece = board.getSquare(newRow, newCol).getPiece();
+                if (destinationPiece == null || !destinationPiece.getColor().equals(getColor())) {
+                    moves.add(new Move(row, col, newRow, newCol));
+                }
+            }
+        }
+        return moves;
+    }
+    @Override
+    public String getType() {
+        return "King";
     }
 }

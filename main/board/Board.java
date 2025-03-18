@@ -1,6 +1,5 @@
 package main.board;
 
-import main.game.Player;
 import main.pieces.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -72,7 +71,7 @@ public class Board {
         }
     }
 
-    public boolean isValidMove(Move move, Player currentPlayer) {
+    public boolean isValidMove(Move move, String color) {
         Square startSquare = getSquare(move.getStartRow(), move.getStartCol());
         Square endSquare = getSquare(move.getEndRow(), move.getEndCol());
         Piece piece = startSquare.getPiece();
@@ -81,7 +80,7 @@ public class Board {
             return false;
         }
 
-        if (!piece.getColor().equals(currentPlayer.getColor())) {
+        if (!piece.getColor().equals(color)) {
             return false;
         }
 
@@ -106,17 +105,109 @@ public class Board {
             for (int startCol = 0; startCol < 8; startCol++) {
                 Piece piece = getSquare(startRow, startCol).getPiece();
                 if (piece != null && piece.getColor().equals(color)) {
-                    for (int endRow = 0; endRow < 8; endRow++) {
-                        for (int endCol = 0; endCol < 8; endCol++) {
-                            Move move = new Move(startRow, startCol, endRow, endCol);
-                            if (isValidMove(move, new Player(color))) {
-                                possibleMoves.add(move);
-                            }
-                        }
-                    }
+                    possibleMoves.addAll(piece.getPossibleMoves(this, startRow, startCol));
                 }
             }
         }
         return possibleMoves;
+    }
+
+    public Board(Board other) {
+        this.squares = new Square[8][8];
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                this.squares[i][j] = new Square(other.squares[i][j]); // Copy each square
+            }
+        }
+    }
+
+    public Board copy() {
+        return new Board(this);
+    }
+
+    public boolean isGameOver() {
+        // Check for checkmate
+        if (isCheckmate("white") || isCheckmate("black")) {
+            return true;
+        }
+
+        // Check for stalemate
+        if (isStalemate("white") || isStalemate("black")) {
+            return true;
+        }
+
+        return false; // Game is not over
+    }
+
+    private boolean isCheckmate(String color) {
+        if (!isKingInCheck(color)) {
+            return false; // King is not in check, so it's not checkmate
+        }
+
+        // Check if there are any legal moves to escape check
+        List<Move> possibleMoves = generatePossibleMoves(color);
+        for (Move move : possibleMoves) {
+            Board tempBoard = copy();
+            tempBoard.executeMove(move);
+            if (!tempBoard.isKingInCheck(color)) {
+                return false; // Found a move to escape check
+            }
+        }
+        return true; // No moves to escape check, it's checkmate
+    }
+
+    private boolean isStalemate(String color) {
+        if (isKingInCheck(color)) {
+            return false; // King is in check, so it's not stalemate
+        }
+
+        // Check if there are any legal moves
+        List<Move> possibleMoves = generatePossibleMoves(color);
+        return possibleMoves.isEmpty(); // Stalemate if no legal moves
+    }
+
+    private boolean isKingInCheck(String color) {
+        // Find the King's position
+        int kingRow = -1, kingCol = -1;
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                Piece piece = getSquare(row, col).getPiece();
+                if (piece instanceof King && piece.getColor().equals(color)) {
+                    kingRow = row;
+                    kingCol = col;
+                    break;
+                }
+            }
+            if (kingRow != -1) {
+                break;
+            }
+        }
+
+        // Check if any opponent piece can attack the King
+        String opponentColor = color.equals("white") ? "black" : "white";
+        List<Move> opponentMoves = generatePossibleMoves(opponentColor);
+        for (Move move : opponentMoves) {
+            if (move.getEndRow() == kingRow && move.getEndCol() == kingCol) {
+                return true; // King is in check
+            }
+        }
+        return false; // King is not in check
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int row = 0; row < 8; row++) {
+            for (int col = 0; col < 8; col++) {
+                Piece piece = getSquare(row, col).getPiece();
+                if (piece == null) {
+                    sb.append(" . ");
+                } else {
+                    sb.append(" ").append(piece.getSymbol()).append(" ");
+                }
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
     }
 }
