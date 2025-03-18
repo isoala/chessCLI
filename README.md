@@ -12,7 +12,7 @@
 ╚═══════════════════════════════════════════════════════════════════════════════════╝
 ```
 
-This project is a CLI chess game developed in Java. It allows users to play chess against a basic AI opponent directly in their terminal.
+This project is a CLI chess game developed in Java. It allows users to play chess against an AI opponent of varying difficulty directly in their terminal.
 
 ## Current State of The Repository
 * While the game is playable, I plan on working on this regularly until all the features are working as intended.
